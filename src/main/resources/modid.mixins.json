@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cz.nejakejtomas.dynmapbanners.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "server": [
+    "AbstractBannerBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
