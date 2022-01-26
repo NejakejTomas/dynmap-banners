@@ -1,6 +1,6 @@
 # Dynmap banners for Fabric
 
-##Setup
+## Setup
 Place .jar into mods folder, along with Dynmap and Fabric API
 
 ## Usage
