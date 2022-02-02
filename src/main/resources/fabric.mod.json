@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "dynmap-banners",
   "version": "${version}",
 
   "name": "Dynmap banners",
