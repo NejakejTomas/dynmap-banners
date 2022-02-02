@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class BannerApi extends DynmapCommonAPIListener
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger("dynmap-banners");
+	private static final Logger LOGGER = LoggerFactory.getLogger(BannerApi.class);
 	private MarkerAPI markerApi;
 	private MarkerSet markerSet;
 	
@@ -25,7 +25,6 @@ public class BannerApi extends DynmapCommonAPIListener
 			return;
 		}
 		
-		markerApi.getMarkerSet("banners");
 		markerSet = markerApi.getMarkerSet("banners");
 		
 		if (markerSet == null) {
@@ -35,6 +34,7 @@ public class BannerApi extends DynmapCommonAPIListener
 		markerSet.setMinZoom(-1);
 		
 		Banners.createIcons(markerApi);
+		LOGGER.info("Dynmap banners initialized");
 	}
 	
 	private static String patchWorldName(String worldName) {

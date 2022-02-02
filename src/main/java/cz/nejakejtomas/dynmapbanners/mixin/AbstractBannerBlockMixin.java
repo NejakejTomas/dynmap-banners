@@ -26,14 +26,17 @@ import java.util.Optional;
 @Mixin(AbstractBannerBlock.class)
 public abstract class AbstractBannerBlockMixin extends BlockWithEntity
 {
-	private final Logger LOGGER = LoggerFactory.getLogger("dynmap-banners");
+	private final Logger LOGGER = LoggerFactory.getLogger(AbstractBannerBlockMixin.class);
 	
 	protected AbstractBannerBlockMixin(Settings settings)
 	{
 		super(settings);
 	}
 	
-	@Inject(at = @At("HEAD"), method = "onPlaced(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/item/ItemStack;)V")
+	@Inject(
+					at = @At("HEAD"),
+					method = "onPlaced(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/item/ItemStack;)V",
+					require = 1)
 	private void onPlaced(World world, BlockPos position, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo callbackInfo) {
 		if (world.isClient) return;
 		if (!itemStack.hasCustomName()) return;
