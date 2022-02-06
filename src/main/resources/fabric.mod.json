@@ -21,7 +21,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "dynmap-banners.mixins.json"
   ],
 
   "depends": {
