@@ -22,23 +22,6 @@ public class Banners
 	public static String getMarkerId(WorldPosition position) {
 		return "banner_" + position.x() + "_" + position.y() + "_" + position.z();
 	}
-	
-//	private static File[] getResourceFolderFiles(String folder) {
-//		LOGGER.info("0");
-//		final ClassLoader loader = Banners.class.getClassLoader();
-//		LOGGER.info("1");
-//		final URL url = loader.getResource(folder);
-//		LOGGER.info("2");
-//		final String path = url.getPath();
-//
-//		LOGGER.info("3");
-//		LOGGER.info(path);
-//		LOGGER.info("4");
-//		LOGGER.info((new File(path)).toString());
-//		File[] files = new File(path).listFiles();
-//
-//		return new File(path).listFiles();
-//	}
 
 	private static String getIconPathByName(String dyeColor) {
 		return BANNER_FOLDER + "/" + dyeColor + ".png";
@@ -59,25 +42,5 @@ public class Banners
 				e.printStackTrace();
 			}
 		});
-		
-		
-//		for (File file : getResourceFolderFiles(BANNER_FOLDER)) {
-//			final String colorName = file.getName().replace(".png", "");
-//
-//			final InputStream inputStream;
-//			try {
-//				inputStream = new FileInputStream(file);
-//
-//				if (markerApi.getMarkerIcon(getMarkerIconId(colorName)) == null) {
-//					markerApi.createMarkerIcon(getMarkerIconId(colorName), getMarkerIconLabel(colorName), inputStream);
-//				}
-//				else {
-//					markerApi.getMarkerIcon(getMarkerIconId(colorName)).setMarkerIconImage(inputStream);
-//				}
-//			}
-//			catch (FileNotFoundException e) {
-//				LOGGER.warn("Error opening banner image file", e);
-//			}
-//		}
 	}
 }
