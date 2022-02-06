@@ -46,7 +46,8 @@ public abstract class AbstractBannerBlockMixin extends BlockWithEntity
 		final Optional<BannerBlockEntity> bannerEntity = world.getBlockEntity(position, BlockEntityType.BANNER);
 		if (bannerEntity.isEmpty()) return;
 		
-		final String name = itemStack.getName().asString();
+		final String name = itemStack.getName().asString().strip().trim();
+		if (name.isEmpty()) return;
 		final String dimension = player.getWorld().getRegistryKey().getValue().getPath();
 		final MarkerIcon icon =  bannerApi.getIcon(bannerEntity.get().getColorForState().getName());
 		final WorldPosition bannerPosition = new WorldPosition(position.getX(), position.getY(), position.getZ());
