@@ -54,7 +54,7 @@ public abstract class AbstractBannerBlockMixin extends BlockWithEntity
 		
 		bannerApi.addBanner(name, dimension, bannerPosition, icon);
 		
-		LOGGER.info("Banner marker created " + bannerPosition.x() + " " + bannerPosition.y() + " " + bannerPosition.z() + " by " + player.getName() + " " + placer.getUuidAsString());
+		LOGGER.info("Banner marker created " + bannerPosition.x() + " " + bannerPosition.y() + " " + bannerPosition.z() + " by " + player.getName().asString() + " " + placer.getUuidAsString());
 	}
 	
 	@Override
@@ -66,6 +66,6 @@ public abstract class AbstractBannerBlockMixin extends BlockWithEntity
 		final WorldPosition bannerPosition = new WorldPosition(position.getX(), position.getY(), position.getZ());
 		bannerApi.removeBanner(bannerPosition);
 		
-		LOGGER.info("Banner marker removed " + bannerPosition.x() + " " + bannerPosition.y() + " " + bannerPosition.z() + " by " + player.getName() + " " + player.getUuidAsString());
+		LOGGER.info("Banner marker removed " + bannerPosition.x() + " " + bannerPosition.y() + " " + bannerPosition.z() + " by " + player.getName().asString() + " " + player.getUuidAsString());
 	}
 }
